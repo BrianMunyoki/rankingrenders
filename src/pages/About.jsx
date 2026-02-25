@@ -1,8 +1,9 @@
 import { Code2, BarChart3, Rocket, Code, GraduationCap, ArrowRight } from 'lucide-react';
 import TechChip from '../components/TechChip';
 import TimelineItem from '../components/TimelineItem';
+import BrianMuemaImage from '../assets/BrianMuemaImage.jpg';
 
-export default function About() {
+function About() {
   const softwareStack = ["React.js", "TypeScript", "Vite", "Node.js", "Tailwind CSS", "PostgreSQL", "Next.js", "AWS"];
   const marketingStack = ["Google Ads", "Ahrefs", "Meta Ads", "Conversion API", "GTM & GA4", "SEO Engineering", "Semrush", "Lead Gen Funnels"];
 
@@ -43,7 +44,7 @@ export default function About() {
           <div className="relative justify-self-center lg:justify-self-end">
              <div className="w-72 h-80 md:w-80 md:h-96 bg-gradient-to-br from-blue-600 to-blue-900 rounded-3xl rotate-3 absolute inset-0 -z-10 opacity-20" />
              <div className="w-72 h-80 md:w-80 md:h-96 bg-slate-800 rounded-3xl overflow-hidden border border-white/10">
-                <img src="/your-portrait.jpg" alt="Profile" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                <img src={BrianMuemaImage} alt="Profile" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
              </div>
           </div>
         </div>
@@ -93,3 +94,5 @@ function ExpertiseBox({ title, icon: Icon, stack }) {
     </div>
   );
 }
+
+export default About;
