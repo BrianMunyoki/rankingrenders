@@ -2,7 +2,6 @@ import { useState } from 'react'; // Import the hook
 import { Send, CheckCircle } from 'lucide-react';
 
 function Contact() {
-  // 1. Define 'isSubmitted' state. Initially, it's false.
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e) => {

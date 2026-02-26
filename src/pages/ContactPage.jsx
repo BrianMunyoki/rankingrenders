@@ -1,17 +1,39 @@
 import { Mail, Linkedin, Github, Send, PhoneCall } from 'lucide-react';
 import { useState } from 'react';
 
-export default function ContactPage() {
+function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
+  // --- UPDATED LOGIC START ---
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevents the page from refreshing
+    
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xlgwzean", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true); // Shows your "Message Sent" screen
+        form.reset(); // Clears the boxes
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        alert("Oops! Formspree had an issue. Check your Form ID.");
+      }
+    } catch (error) {
+      alert("Connection error. Are you online?");
+    }
   };
+  // --- UPDATED LOGIC END ---
 
   return (
-    /* pt-32 ensures the content starts below your fixed Navbar */
     <div className="min-h-screen bg-[#0a0f1a] pt-32 pb-20 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         
@@ -48,31 +70,33 @@ export default function ContactPage() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              <FormInput label="Full Name" placeholder="John Doe" />
-              <FormInput label="Email Address" type="email" placeholder="john@example.com" />
+              {/* NOTE: Added 'name' props below */}
+              <FormInput name="full_name" label="Full Name" placeholder="John Doe" />
+              <FormInput name="email" label="Email Address" type="email" placeholder="john@example.com" />
               
               <div className="flex flex-col gap-2">
                 <label className="text-[10px] uppercase tracking-widest font-bold text-slate-500 ml-1">Message</label>
                 <textarea 
+                  name="message" // <--- CRITICAL
                   rows="5"
+                  required
                   placeholder="Tell us about your project..."
                   className="w-full bg-[#161e2d] border border-white/5 rounded-xl px-4 py-4 text-white focus:border-blue-500/50 outline-none resize-none transition-all"
                 />
               </div>
 
-              <button className="w-full bg-blue-600 hover:bg-blue-500 text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all">
+              <button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all">
                 Send Message <Send size={18} />
               </button>
             </form>
           )}
         </div>
-
       </div>
     </div>
   );
 }
 
-// Sub-components to keep code clean
+// Sub-components
 function ContactMethod({ icon: Icon, label, value }) {
   return (
     <div className="flex items-center gap-4 group">
@@ -87,15 +111,20 @@ function ContactMethod({ icon: Icon, label, value }) {
   );
 }
 
-function FormInput({ label, type = "text", placeholder }) {
+// UPDATED FORM INPUT TO ACCEPT 'name'
+function FormInput({ label, name, type = "text", placeholder }) {
   return (
     <div className="flex flex-col gap-2">
       <label className="text-[10px] uppercase tracking-widest font-bold text-slate-500 ml-1">{label}</label>
       <input 
+        name={name} // <--- This sends the data to Formspree
         type={type} 
         placeholder={placeholder}
+        required
         className="w-full bg-[#161e2d] border border-white/5 rounded-xl px-4 py-4 text-white focus:border-blue-500/50 outline-none transition-all"
       />
     </div>
   );
 }
+
+export default ContactPage;

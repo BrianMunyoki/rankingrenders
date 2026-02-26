@@ -69,8 +69,8 @@ function About() {
           </div>
           <div className="relative max-w-4xl mx-auto">
             <div className="absolute left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-blue-600 via-slate-800 to-transparent" />
-            <TimelineItem isLeft={false} period="2021 - Present" title="Founder, RankingRenders" company="Strategic Growth & Dev" icon={Rocket} />
-            <TimelineItem isLeft={true} period="2019 - 2021" title="Lead Growth Engineer" company="FinTech Unicorn" icon={Code} />
+            <TimelineItem isLeft={false} period="2026 - Present" title="Founder, RankingRenders" company="Strategic Growth & Dev" icon={Rocket} />
+            <TimelineItem isLeft={true} period="2022- 2025" title="SEO Technical specialist" company="upMention" icon={Code} />
           </div>
         </div>
 

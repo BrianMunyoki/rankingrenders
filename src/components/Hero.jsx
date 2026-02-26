@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import Logo  from '../assets/BrianMuemaImage.jpg'
 
 function Hero() {
   return (
@@ -23,8 +24,8 @@ function Hero() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6">
-            I Rank Brands. <br />
-            <span className="text-blue-500 italic">I Render</span> Apps.
+            We Rank Brands. <br />
+            <span className="text-blue-500 italic">Build and maintain </span> Apps.
           </h1>
 
           <p className="text-slate-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
@@ -42,12 +43,12 @@ function Hero() {
           </div>
         </div>
 
-        {/* RIGHT SIDE: THE VISUAL */}
+        
         <div className="relative group">
           {/* This represents that 3D plant or abstract image in your design */}
           <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 aspect-square bg-gradient-to-br from-slate-800 to-[#0a0f1a] flex items-center justify-center">
              <img 
-               src="/path-to-your-hero-image.jpg" 
+               src={Logo}
                alt="Project Preview" 
                className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
              />

@@ -6,7 +6,7 @@ function Services() {
       title: "Digital Growth",
       icon: TrendingUp,
       desc: "Dominate your market share and drive massive traffic through integrated advertising and search visibility.",
-      features: ["SEO Optimization", "PPC Management", "TikTok Ad Campaigns"],
+      features: ["SEO Optimization", "PPC Management", "Link building"],
       cta: "Start Growing",
       tag: null
     },
@@ -26,6 +26,7 @@ function Services() {
       cta: "Consult Today",
       tag: null
     }
+    
   ];
 
   return (

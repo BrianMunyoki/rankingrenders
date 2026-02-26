@@ -11,13 +11,12 @@ function Experience() {
         </div>
 
         <div className="relative">
-          {/* THE VERTICAL LINE: 'absolute' allows it to sit behind the items */}
           <div className="absolute left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-blue-600/50 via-slate-800 to-transparent" />
 
           <div className="space-y-24 md:space-y-0">
             <TimelineItem 
               isLeft={false}
-              period="2021 - Present"
+              period="2026 - Present"
               title="Founder, RankingRenders"
               company="Strategic Growth & Dev"
               description="Architecting bespoke web applications for SaaS companies while managing $50k+/month in performance marketing spend."
