@@ -24,6 +24,7 @@ function Footer() {
             <a href="#" className="text-slate-500 hover:text-blue-500 transition-colors"><Linkedin size={20} /></a>
             <a href="#" className="text-slate-500 hover:text-blue-500 transition-colors"><Github size={20} /></a>
             <a href="#" className="text-slate-500 hover:text-blue-500 transition-colors"><MessageSquare size={20} /></a>
+            <a href="#" className="text-slate-500 hover:text-blue-500 transition-colors">Blogs</a>
           </div>
 
           {/* Copyright */}
@@ -34,7 +35,7 @@ function Footer() {
         
         {/* Optional: Bottom Links from Image 4 */}
         <div className="flex justify-center gap-8 mt-8 pt-8 border-t border-white/[0.02]">
-          {['Privacy', 'Terms', 'Cookies'].map((item) => (
+          {['Privacy', 'Terms', 'Cookies','Blogs'].map((item) => (
             <a key={item} href="#" className="text-[10px] uppercase tracking-widest text-slate-600 hover:text-slate-400 transition-colors">
               {item}
             </a>

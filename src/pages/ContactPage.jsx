@@ -1,10 +1,11 @@
 import { Mail, Linkedin, Github, Send, PhoneCall } from 'lucide-react';
 import { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // --- UPDATED LOGIC START ---
+
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevents the page from refreshing
     
@@ -55,10 +56,11 @@ function ContactPage() {
             <ContactMethod icon={Linkedin} label="LinkedIn" value="linkedin.com/company/rankingrenders" />
             <ContactMethod icon={Github} label="Open Source" value="github.com/rankingrenders" />
           </div>
-
+          <Link to="/schedule">
           <button className="flex items-center gap-3 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)]">
             Book a Strategy Call <PhoneCall size={18} />
           </button>
+          </Link>
         </div>
 
         {/* RIGHT SIDE: THE FORM CARD */}

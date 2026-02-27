@@ -1,9 +1,12 @@
-import { TrendingUp, Code2, LineChart, CheckCircle2 } from 'lucide-react';
+import {Link} from 'react-router-dom';
+import { TrendingUp, Code2, LineChart, CheckCircle2, ArrowUpRight } from 'lucide-react';
+
+
 
 function Services() {
   const services = [
     {
-      title: "Digital Growth",
+      title: "Digital Marketing",
       icon: TrendingUp,
       desc: "Dominate your market share and drive massive traffic through integrated advertising and search visibility.",
       features: ["SEO Optimization", "PPC Management", "Link building"],
@@ -11,10 +14,10 @@ function Services() {
       tag: null
     },
     {
-      title: "Full-Stack Engineering",
+      title: "Full-Stack Development",
       icon: Code2,
       desc: "High-performance builds using the modern tech stack. We build applications that are fast, secure, and scalable.",
-      features: ["React / Vite Development", "API Architectures", "Performance Tuning"],
+      features: ["React", "API Architectures", "Performance Tuning"],
       cta: "Build Now",
       tag: "Most Requested"
     },
@@ -33,7 +36,6 @@ function Services() {
     <div className="min-h-screen bg-[#0a0f1a] pt-32 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         
-        {/* HERO SECTION */}
         <div className="relative rounded-[40px] overflow-hidden bg-slate-900/50 border border-white/5 p-12 md:p-20 mb-24 text-center">
           {/* Decorative Grid Background */}
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#3b82f6 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
@@ -70,12 +72,13 @@ function Services() {
               Join 50+ companies that have transformed their digital trajectory with our specialized growth engineering.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/schedule">
               <button className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold hover:bg-blue-50 transition-all shadow-xl">
                 Schedule a Strategy Session
               </button>
-              <button className="bg-black/20 text-white border border-white/20 px-8 py-4 rounded-2xl font-bold hover:bg-black/30 transition-all">
-                View Case Studies
-              </button>
+              </Link>
+            
+              
             </div>
           </div>
         </div>
